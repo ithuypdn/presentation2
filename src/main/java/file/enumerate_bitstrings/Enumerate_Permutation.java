@@ -4,11 +4,19 @@
  */
 package file.enumerate_bitstrings;
 
+import java.util.Scanner;
+
 /**
  *
  * @author huypd
  */
-public class Enumerate_Permutation {
+public class Enumerate_Permutation { 
+//   1 2 4 3
+//     i   k
+//   1 3 4 2
+//       r s
+//   1 3 2 4
+
     // thuật toán sinh hoán vị kế tiếp
     public static boolean nextPermutation(int[] arr) {
         int i = arr.length - 2; // xuất phát từ phần tử trước phần tử cuối
@@ -54,15 +62,20 @@ public class Enumerate_Permutation {
         }
         System.out.println();
     }
-
-    private static void swap(int[] arr, int firstPos, int secondPos) {
-        int tmp = arr[firstPos];
-        arr[firstPos] = arr[secondPos];
-        arr[secondPos] = tmp;
-    }
+    
+//    private static void swap(int[] arr, int firstPos, int secondPos) {
+//        int tmp = arr[firstPos];
+//        arr[firstPos] = arr[secondPos];
+//        arr[secondPos] = tmp;
+//    }
 
     public static void main(String[] args) {
-        int[] arr = {1, 2, 3, 4};
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Enter n: ");
+        int n = sc.nextInt();
+        int arr[] = new int[n];
+        for (int i=0; i<n; i++)
+            arr[i] = i+1;
         generate(arr);
     }
 }
